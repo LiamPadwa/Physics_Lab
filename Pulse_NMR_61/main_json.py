@@ -28,4 +28,9 @@ for path in scripts:
 
 run_time = time() - start_time
 
-print(f'Data analysis took {run_time:.2f} seconds.')
+if run_time >= 60:
+    minutes = int(run_time // 60)
+    seconds = run_time % 60
+    print(f"Data analysis took {minutes} minutes and {seconds:.2f} seconds.")
+else:
+    print(f"Data analysis took {run_time:.2f} seconds.")
